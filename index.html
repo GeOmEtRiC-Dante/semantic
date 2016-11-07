@@ -3,6 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>Semantic</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="css/font-awesome.min.css" media="screen" title="no title">
     <link rel="stylesheet" href="css/hover.css" media="screen" title="no title">
     <link rel="stylesheet" href="css/bootstrap.css" media="screen" title="no title">
@@ -214,7 +231,7 @@
                   </div>
                   <div class="image" style="text-align:center">
                     <a href="#" onclick="openmodal(this)">
-                      <img src="http://i.imgur.com/tpYRZkZ.jpg" class="ui image" alt="Mi gato" style="display:inline;max-height: 350px"/>
+                      <img src="images/9.jpg" class="ui image" alt="Mi gato" style="display:inline;max-height: 350px"/>
                     </a>
                   </div>
                   <div class="content" style="color: #000">
@@ -232,29 +249,103 @@
         </div>
       </div>
     </div>
+
+
     <script src="js/bootstrap.js" charset="utf-8"></script>
     <script type="text/javascript">
     function openmodal(param) {
       this.obj = param
-      this.from = $(obj)[0]['children'][0]['src']
-      this.title = $(obj)[0]['children'][0]['alt']
-      var modal = `<div id="modal-box" class="ui fullscreen modal">
-       <i class="close icon"></i>
-      <div class="header">
-        ${this.title}
-      </div>
-      <div class="image content">
-        <div class="image">
-          <img src="${this.from}" class="ui image" />
-        </div>
-        <div class="description">
-          A description can appear on the right
-        </div>
-      </div>
-    </div>`;
+      this.src = $(obj)[0]['children'][0]['src']
+      this.texto = $(obj)[0]['children'][0]['alt']
+      var modal = `
+          <div id="modal-box" class="ui fullscreen modal">
+           <i class="close icon"></i>
+          <div class="content">
+            <div class="row">
+              <div class="col-md-7" id="image-modal">
+                <img src="${this.src}" class="" style="" />
+              </div>
+              <div class="col-md-5">
+                <div class="description" id="descripcion-modal">
+                  <div class="ui feed">
+                    <div class="event">
+                      <div class="content">
+                        <div class="summary">
+                          <div class="label">
+                            <img src="images/user2.jpg" style="height:auto;max-width:55px; max-height:50px;">
+                          </div>
+                          <a>Jesus Espinoza</a> posted on his page
+                          <div class="date">
+                            3 days ago
+                          </div>
+                        </div>
+                        <div class="extra text">
+                          ${this.texto}
+                        </div>
+                        <div class="meta">
+                          <a class="like">
+                            <i class="like icon"></i> 5 Likes
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="ui threaded comments" id="comentarios-modal">
+                    <div class="comment">
+                      <a class="avatar">
+                        <img src="images/user.jpg">
+                      </a>
+                      <div class="content">
+                        <a class="author">Elliot Fu</a>
+                        <div class="metadata">
+                          <span class="date">Yesterday at 12:30AM</span>
+                        </div>
+                        <div class="text">
+                          <p>This has been very useful for my research. Thanks as well!</p>
+                        </div>
+                        <div class="actions">
+                          <a class="reply">Reply</a>
+                        </div>
+                      </div>
+                      <div class="comments">
+                        <div class="comment">
+                          <a class="avatar">
+                            <img src="images/user.jpg">
+                          </a>
+                          <div class="content">
+                            <a class="author">Jenny Hess</a>
+                            <div class="metadata">
+                              <span class="date">Just now</span>
+                            </div>
+                            <div class="text">
+                              Elliot you are always so right :)
+                            </div>
+                            <div class="actions">
+                              <a class="reply">Reply</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <form class="ui reply form">
+                      <div class="field">
+                        <textarea></textarea>
+                      </div>
+                      <div class="ui blue labeled submit icon button">
+                        <i class="icon edit"></i> Add Reply
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>`;
   $('body').append(modal)
         $('.fullscreen.modal').modal({
           blurring: true,
+          autofocus : false,
           transition : 'fade up',
           onHidden : function() {
             $("#modal-box").remove()

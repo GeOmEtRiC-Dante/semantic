@@ -32,3 +32,62 @@ html, body {
   margin-top: 5px;
   margin-bottom: 10px;
 }
+#modal-box{
+  background: transparent;
+  box-shadow: none;
+}
+.modals.dimmer .ui.scrolling.modal {
+    position: static !important;
+    max-height: 100vh !important;
+    margin: 5px auto !important;
+}
+.ui.modal > .content {
+  padding: 0px;
+  background: transparent;
+}
+.ui.fullscreen.modal > .close {
+  color: rgba(255, 255, 255, 0.70);
+  text-shadow: 0px 1px #000;
+  top: 0px;
+  right: 0px;
+  font-size: 25px;
+}
+.scrolling.dimmable.dimmed > .dimmer {
+  overflow: hidden;
+}
+#image-modal{
+  height: 100vh;
+  text-align: center;
+  vertical-align: middle;
+  align-items: center;
+}
+#image-modal img{
+  height: auto;
+  max-height: 100vh;
+  max-width: 100%
+}
+#descripcion-modal{
+  background: #fff;
+  height: 100vh;
+  padding: 10px 20px;
+  overflow: auto;
+  overflow-y:inherit;
+}
+#descripcion-modal::-webkit-scrollbar {
+      width: 6px;
+}
+#descripcion-modal::-webkit-scrollbar-track {
+      background-color: rgb(194, 194, 194);
+}
+
+#descripcion-modal::-webkit-scrollbar-thumb {
+  top:0px;
+  border-radius: 25px;
+  background-color: rgb(33, 104, 207);
+}
+#descripcion-modal::-webkit-scrollbar-button {
+  display: none;
+}
+#descripcion-modal::-webkit-scrollbar-corner {
+      display: none;;
+}
